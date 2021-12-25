@@ -1,0 +1,49 @@
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        int k=30001;
+        int s=0;
+        int t=0;
+        e=numbers.length-1;
+ while(s<e)
+ {
+     int m=s+ (e-s)/2;
+     t=target-numbers[m];
+             int start,end;
+     if(t>numbers[m])
+     {start=m+1;
+      end=numbers.length-1;
+         while(start<end)
+         {int mid =start + (end-start)/2;
+             if(numbers[mid]==t)
+             {k=mid;
+              break;
+}
+          else if(t>numbers[mid])
+               end=mid+1;
+          else
+              start =mid-1;
+         }
+     }
+      else
+      {
+          start=0;
+      end=m+1;
+         while(start<end)
+         {int mid =start + (end-start)/2;
+             if(numbers[mid]==t)
+             {k=mid;
+              break;
+}
+          else if(t>numbers[mid])
+               end=mid+1;
+          else
+              start =mid-1;
+         }
+      }
+      if(k!=30001)
+          break;
+     }
+ }
+        return new int[] {t,k};
+    }
+}

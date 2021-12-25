@@ -1,0 +1,24 @@
+       int k=30001;
+        int start,end;
+        int t=0;
+        for(int i=0;i<=numbers.length/2;i++)
+        {
+            start =1;
+            end =numbers.length-1;
+           t=target-numbers[i];
+            while(start<=end)
+            {
+                int m=start +(end-start)/2;
+                if(t==numbers[m])
+                {k=m;
+                 break;
+                }
+                else if(t>numbers[m])
+                    end=m+1;
+                else
+                    start=m-1;
+}
+            if(k!=30001)
+                break;
+        }
+        return new int[]{t,k};
